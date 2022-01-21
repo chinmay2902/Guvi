@@ -1,0 +1,10 @@
+.primary{
+    color: #6C63FF;
+    outline-color:#6C63FF;
+}
+h5,h2,h6{
+    color: #6C63FF;
+}
+#items:hover{
+    transform: scale(1.1);
+}

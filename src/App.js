@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navbar from './components/Navbar';
+import SearchBook from './components/Book';
+import LoadingBar from 'react-top-loading-bar'
+import { useState } from 'react'
+
 
 function App() {
+  const [progress,setProgress]=useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Navbar />
+        <LoadingBar
+            color='#6C63FF'
+            progress={progress}
+            onLoaderFinished={() => setProgress(0)}
+        />
+
+        <SearchBook setProgress={setProgress} />
+        
+    </>
   );
 }
 
